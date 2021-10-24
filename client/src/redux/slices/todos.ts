@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ITodo } from '../../types';
 

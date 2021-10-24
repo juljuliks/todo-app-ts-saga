@@ -12,8 +12,8 @@ interface ILoginUserAction {
 
 function* loginUser({ payload }: ILoginUserAction): Generator<StrictEffect> {
   try {
-    const loggedUser = yield call(postData, '/api/login', payload);
-    yield put(actions.loginUserFullfilled(loggedUser as IProfile));
+    const loggedUser: any = yield call(postData, '/api/login', payload);
+    yield put(actions.loginUserFullfilled(loggedUser));
   } catch (e) {
     console.log(e);
     yield put(actions.loginUserRejected(e));
@@ -32,8 +32,8 @@ function* logoutUser(): Generator<StrictEffect> {
 
 function* registerUser({ payload }: ILoginUserAction): Generator<StrictEffect> {
   try {
-    const loggedUser = yield call(postData, '/api/register', payload);
-    yield put(actions.loginUserFullfilled(loggedUser as IProfile));
+    const loggedUser: any = yield call(postData, '/api/register', payload);
+    yield put(actions.loginUserFullfilled(loggedUser));
   } catch (e) {
     console.log(e);
     yield put(actions.loginUserRejected(e));
@@ -42,8 +42,8 @@ function* registerUser({ payload }: ILoginUserAction): Generator<StrictEffect> {
 
 function* loginInitialUser(): Generator<StrictEffect> {
   try {
-    const loggedUser = yield call(getData, '/api/me');
-    yield put(actions.loginUserFullfilled(loggedUser as IProfile));
+    const loggedUser: any = yield call(getData, '/api/me');
+    yield put(actions.loginUserFullfilled(loggedUser));
   } catch (e) {
     console.log(e);
     yield put(actions.loginUserRejected(e));

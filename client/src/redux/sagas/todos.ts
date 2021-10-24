@@ -24,8 +24,8 @@ interface IEditTodoAction {
 
 function* getAllTodos(): Generator<StrictEffect> {
   try {
-    const allTodos = yield call(getData, '/api/todos');
-    yield put(actions.getAllTodosFullfilled(allTodos as ITodo[]));
+    const allTodos: any = yield call(getData, '/api/todos');
+    yield put(actions.getAllTodosFullfilled(allTodos));
   } catch (e) {
     yield put(actions.getAllTodosRejected(e));
   }
@@ -33,8 +33,8 @@ function* getAllTodos(): Generator<StrictEffect> {
 
 function* createTodo({ payload }: ICreateTodoAction): Generator<StrictEffect> {
   try {
-    const newTodo = yield call(postData, '/api/todos', payload);
-    yield put(actions.createTodoFullfilled(newTodo as ITodo));
+    const newTodo: any = yield call(postData, '/api/todos', payload);
+    yield put(actions.createTodoFullfilled(newTodo));
   } catch (e) {
     yield put(actions.createTodoRejected(e));
   }

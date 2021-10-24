@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { Input, Button } from 'antd';
 import styled from 'styled-components';
