@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import TodoItem from '../TodoItem';
 import { ITodo } from '../../../../types';
-
+import { Empty } from 'antd';
 const List = styled.ul`
   margin: 30px 0;
   padding: 0;
@@ -21,7 +21,7 @@ const TodosFeed: React.FC<ITodoFeedProps> = ({
 }) => {
   if (!todos.length) {
     return (
-      <div>No todos</div>
+      <Empty description="No todos yet"/>
     );
   }
 
