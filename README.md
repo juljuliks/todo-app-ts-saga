@@ -14,4 +14,6 @@
 Фронтенд: TypeScript, React, Redux-Toolkit, Redux-saga, Ant Design
 Бэкенд: Node.js, Express, Sessions, PostgreSQL, Sequlize ORM
 
+[git]: https://github.com/juljuliks/todo-app-ts-saga
+
 
