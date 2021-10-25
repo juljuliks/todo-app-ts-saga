@@ -1,42 +1,26 @@
-/* eslint-disable no-unused-vars */
-import { useEffect } from 'react';
-import Navbar from './modules/Navbar';
-import useRouter from './routes';
-import { actions } from './redux/slices';
-import { useAppSelector, useAppDispatch } from './redux/store';
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
 
-const App = () => {
-  const dispatch = useAppDispatch();
-  const user = useAppSelector((state) => state.user.profile);
-  const isLoading = useAppSelector((state) => state.user.isLoading);
-  const isAuthenticated = Boolean(user?.id);
-  const routes = useRouter(isAuthenticated);
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      dispatch(actions.getAllTodosPending());
-    }
-  }, [isAuthenticated, dispatch]);
-
-  useEffect(() => {
-    dispatch(actions.getInitialUserPending());
-  }, [dispatch]);
-
-  if (isLoading) {
-    return (
-      <>
-        <Navbar isAuth={isAuthenticated} />
-        <h1>Идёт загрузка, подождите</h1>
-      </>
-    );
-  }
-
+function App() {
   return (
-    <>
-      <Navbar isAuth={isAuthenticated} />
-      {routes}
-    </>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
-};
+}
 
 export default App;
