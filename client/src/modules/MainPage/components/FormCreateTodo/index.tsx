@@ -45,7 +45,7 @@ const FormCreateTodo: React.FC<IformCreateTodo> = ({
 
   return (
     <Form onSubmit={isEditing ? onEditForm : submitForm}>
-      <Input placeholder="Basic usage" name="body" value={formState.body} onChange={changeInput} />
+      <Input placeholder="Enter your task" name="body" value={formState.body} onChange={changeInput} />
       <Button htmlType="submit">{isEditing ? 'Edit ToDo' : 'Add ToDo'}</Button>
     </Form>
   );

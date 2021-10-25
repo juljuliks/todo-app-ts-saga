@@ -4,7 +4,7 @@ import Navbar from './modules/Navbar';
 import useRouter from './routes';
 import { actions } from './redux/slices';
 import { useAppSelector, useAppDispatch } from './redux/store';
-
+import { Spin } from 'antd'
 const App = () => {
   const dispatch = useAppDispatch();
   const user = useAppSelector((state) => state.user.profile);
@@ -22,18 +22,10 @@ const App = () => {
     dispatch(actions.getInitialUserPending());
   }, [dispatch]);
 
-  if (isLoading) {
-    return (
-      <>
-        <Navbar isAuth={isAuthenticated} />
-        <h1>Идёт загрузка, подождите</h1>
-      </>
-    );
-  }
-
   return (
     <>
       <Navbar isAuth={isAuthenticated} />
+      {isLoading && <Spin />}
       {routes}
     </>
   );
