@@ -2,7 +2,7 @@ const express = require('express');
 const logger = require('morgan');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
-
+const path = require('path')
 const todosRouter = require('./routes/todos.router');
 const authRouter = require('./routes/auth.router');
 
