@@ -11,8 +11,5 @@
   "engines": {
     "yarn": "1.22.5",
     "node": "14.17.3"
-  },
-  "devDependencies": {
-    "eslint": "^8.1.0"
   }
 }
